@@ -15,9 +15,9 @@ export function LandingNav() {
           <span className="grid h-12 w-12 place-items-center border border-white/10 bg-[linear-gradient(180deg,rgba(90,141,255,0.26),rgba(255,141,79,0.18))] text-sm font-semibold text-white transition duration-300 group-hover:scale-[1.02]">
             <Image src="/logo.png" alt="MINGFO" width={48} height={48} className="h-full w-full object-cover" priority />
           </span>
-          <span className="hidden sm:block">
+          <span className="block">
             <span className="block text-[17px] font-semibold tracking-[0.18em] text-white">MINGFO</span>
-            <span className="block text-[11px] uppercase tracking-[0.24em] text-white/40">movie compass</span>
+            <span className="hidden text-[11px] uppercase tracking-[0.24em] text-white/40 sm:block">movie compass</span>
           </span>
         </Link>
 
@@ -35,12 +35,6 @@ export function LandingNav() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2">
-          <Link
-            href="/discover"
-            className="inline-flex h-10 items-center border border-white/10 px-3 text-sm font-medium text-white/74 transition duration-200 hover:border-white/20 hover:bg-white/5 hover:text-white md:hidden"
-          >
-            Discover
-          </Link>
           <Link
             href="/discover"
             className="inline-flex h-10 items-center border border-white/10 bg-white px-4 text-sm font-semibold text-ink-950 transition duration-200 hover:bg-slate-100"
