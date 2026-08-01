@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { HorizontalScroll } from "@/components/horizontal-scroll";
 import type { Video } from "@/lib/types";
 
 const typeOrder = ["Trailer", "Teaser", "Clip", "Featurette", "Behind the Scenes"];
@@ -111,9 +112,9 @@ export function MovieVideos({ videos }: { videos: Video[] }) {
       {moreVideos.length > 0 && (
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-white">More videos</h3>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <HorizontalScroll ariaLabel="More videos" contentClassName="flex gap-5 pb-2 sm:grid sm:grid-cols-2 lg:grid-cols-3">
             {moreVideos.map((video) => (
-              <div key={video.key} className="min-w-0">
+              <div key={video.key} className="w-[18rem] shrink-0 sm:w-auto sm:min-w-0">
                 <VideoThumbnail video={video} onSelect={() => setSelected(video)} />
                 <div className="mt-2 flex flex-wrap gap-x-2 text-xs text-white/50">
                   <span>{video.type}</span>
@@ -121,7 +122,7 @@ export function MovieVideos({ videos }: { videos: Video[] }) {
                 </div>
               </div>
             ))}
-          </div>
+          </HorizontalScroll>
         </div>
       )}
     </section>
