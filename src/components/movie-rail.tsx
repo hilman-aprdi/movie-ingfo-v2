@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MovieCard } from "@/components/movie-card";
+import { HorizontalScroll } from "@/components/horizontal-scroll";
 import type { MovieSummary } from "@/lib/types";
 import { cn, mediaHref } from "@/lib/utils";
 
@@ -25,7 +26,7 @@ export function MovieRail({ title, href, movies, className, actionLabel = "See a
         </Link>
       </div>
 
-      <div className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2">
+      <HorizontalScroll ariaLabel={`${title} movies`} contentClassName="flex snap-x snap-mandatory gap-4 pb-2">
         {movies.map((movie) => (
           <MovieCard
             key={movie.id}
@@ -34,7 +35,7 @@ export function MovieRail({ title, href, movies, className, actionLabel = "See a
             className="w-[9.75rem] flex-none snap-start sm:w-[11rem] lg:w-[12.5rem]"
           />
         ))}
-      </div>
+      </HorizontalScroll>
     </section>
   );
 }

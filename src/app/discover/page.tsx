@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { BookmarkButton } from "@/components/bookmark-button";
 import { ComingSoonList } from "@/components/coming-soon-list";
+import { HorizontalScroll } from "@/components/horizontal-scroll";
 import { DiscoverFilters } from "@/components/discover-filters";
 import { DiscoverResultsHeading } from "@/components/discover-results-heading";
 import { EmptyState } from "@/components/empty-state";
@@ -53,7 +54,7 @@ function MediaTabs({ mediaType, params }: { mediaType: "movie" | "tv"; params: R
 
 function PosterRow({ movies, mediaType }: { movies: MovieSummary[]; mediaType: "movie" | "tv" }) {
   if (movies.length === 0) return null;
-  return <div className="no-scrollbar grid grid-flow-col auto-cols-[9.5rem] gap-4 overflow-x-auto pb-2 sm:auto-cols-[11rem] lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-4 xl:grid-cols-5 min-[1400px]:grid-cols-6">{movies.slice(0, 8).map((movie) => { const item = { ...movie, mediaType }; return <MovieCard key={movie.id} movie={item} href={mediaHref(item)} className="h-full" hideInvalidRating />; })}</div>;
+  return <HorizontalScroll ariaLabel="Trending movies" contentClassName="grid grid-flow-col auto-cols-[9.5rem] gap-4 pb-2 sm:auto-cols-[11rem] lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-4 xl:grid-cols-5 min-[1400px]:grid-cols-6">{movies.slice(0, 8).map((movie) => { const item = { ...movie, mediaType }; return <MovieCard key={movie.id} movie={item} href={mediaHref(item)} className="h-full" hideInvalidRating />; })}</HorizontalScroll>;
 }
 
 function BrowseGrid({ movies }: { movies: MovieSummary[] }) {

@@ -1,4 +1,5 @@
 import { PageShell } from "@/components/page-shell";
+import { HorizontalScroll } from "@/components/horizontal-scroll";
 
 export default function Loading() {
   return (
@@ -27,7 +28,7 @@ export default function Loading() {
             <div className="h-8 w-40 bg-white/10" />
             <div className="h-4 w-16 bg-white/10" />
           </div>
-          <div className="no-scrollbar flex gap-4 overflow-x-auto pb-2">
+          <HorizontalScroll ariaLabel="Loading movie results" contentClassName="flex gap-4 pb-2">
             {Array.from({ length: 5 }).map((__, cardIndex) => (
               <div key={cardIndex} className="w-[9.75rem] flex-none sm:w-[11rem] lg:w-[12.5rem]">
                 <div className="aspect-[2/3] bg-white/10" />
@@ -35,7 +36,7 @@ export default function Loading() {
                 <div className="mt-2 h-3 w-1/2 bg-white/10" />
               </div>
             ))}
-          </div>
+          </HorizontalScroll>
         </section>
       ))}
     </PageShell>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { CastMember } from "@/lib/types";
 import { profileUrl } from "@/lib/tmdb";
+import { HorizontalScroll } from "@/components/horizontal-scroll";
 
 export function CastList({ cast }: { cast?: CastMember[] }) {
   const members = cast?.filter((member) => member.name.trim()).slice(0, 12) ?? [];
@@ -9,7 +10,7 @@ export function CastList({ cast }: { cast?: CastMember[] }) {
   return (
     <section className="space-y-5 border-t border-white/10 pt-8" aria-labelledby="cast-heading">
       <h2 id="cast-heading" className="text-2xl font-semibold tracking-[-0.02em] text-white">Cast</h2>
-      <div className="no-scrollbar flex gap-4 overflow-x-auto pb-2 sm:grid sm:grid-cols-4 sm:overflow-visible lg:grid-cols-8">
+      <HorizontalScroll ariaLabel="Cast" contentClassName="flex gap-4 pb-2 sm:grid sm:grid-cols-4 sm:overflow-visible lg:grid-cols-8">
         {members.map((member) => {
           const image = profileUrl(member.profilePath);
           return (
@@ -28,7 +29,7 @@ export function CastList({ cast }: { cast?: CastMember[] }) {
             </div>
           );
         })}
-      </div>
+      </HorizontalScroll>
     </section>
   );
 }

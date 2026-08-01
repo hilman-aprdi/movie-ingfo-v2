@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { MovieSummary } from "@/lib/types";
 import { LandingMovieCard } from "@/components/landing-movie-card";
+import { HorizontalScroll } from "@/components/horizontal-scroll";
 import { movieHref } from "@/lib/utils";
 
 interface LandingMovieRailProps {
@@ -21,9 +22,9 @@ export function LandingMovieRail({ title, href, movies, actionLabel = "View all"
           {actionLabel} <span aria-hidden="true">→</span>
         </Link>
       </div>
-      <div className="no-scrollbar grid grid-flow-col auto-cols-[9.4rem] gap-4 overflow-x-auto pb-2 sm:auto-cols-[11rem] lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-4 xl:grid-cols-5 min-[1400px]:grid-cols-6">
+      <HorizontalScroll ariaLabel={`${title} movies`} contentClassName="grid grid-flow-col auto-cols-[9.4rem] gap-4 pb-2 sm:auto-cols-[11rem] lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-4 xl:grid-cols-5 min-[1400px]:grid-cols-6">
         {movies.map((movie) => <LandingMovieCard key={movie.id} movie={movie} href={movieHref(movie)} />)}
-      </div>
+      </HorizontalScroll>
     </section>
   );
 }
