@@ -61,8 +61,8 @@ export function LandingFeatureGrid() {
       </div>
       <div className="grid gap-x-8 gap-y-8 sm:grid-cols-3">
         {features.map((feature) => (
-          <article key={feature.number} className="min-w-0 border-t border-white/15 pt-4">
-            <div className="flex items-center gap-3 text-ember-300/90">
+          <article key={feature.number} className="min-w-0 border-t border-white/15 pt-4 text-center">
+            <div className="flex items-center justify-center gap-3 text-ember-300/90">
               <FeatureIcon number={feature.number} />
               <p className="text-xs font-medium tracking-[0.16em]">{feature.number}</p>
             </div>
