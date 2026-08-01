@@ -3,7 +3,6 @@ import { LandingDiscoveryShortcuts } from "@/components/landing-discovery-shortc
 import { LandingFeatureGrid } from "@/components/landing-feature-grid";
 import { LandingHero } from "@/components/landing-hero";
 import { LandingMovieRail } from "@/components/landing-movie-rail";
-import { LandingNav } from "@/components/landing-nav";
 import { PageShell } from "@/components/page-shell";
 import { getMovieById, getPopularMovies, getTrendingMovies } from "@/lib/tmdb";
 import type { MovieSummary, PagedResponse } from "@/lib/types";
@@ -73,9 +72,7 @@ export default async function LandingPage() {
   }
 
   return (
-    <>
-      <LandingNav />
-      <PageShell className="space-y-14 pb-24 pt-0 sm:space-y-16 lg:space-y-20">
+    <PageShell className="space-y-14 pb-24 pt-0 sm:space-y-16 lg:space-y-20">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
         <LandingHero
           movie={featured}
@@ -110,7 +107,6 @@ export default async function LandingPage() {
             </Link>
           </div>
         </section>
-      </PageShell>
-    </>
+    </PageShell>
   );
 }
