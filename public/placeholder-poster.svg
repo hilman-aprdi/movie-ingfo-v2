@@ -1,0 +1,18 @@
+<svg width="800" height="1200" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11172A"/>
+      <stop offset="1" stop-color="#050816"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 360) rotate(90) scale(360 260)">
+      <stop stop-color="#5A8DFF" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#5A8DFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1200" rx="48" fill="url(#g)"/>
+  <rect x="64" y="64" width="672" height="1072" rx="36" stroke="white" stroke-opacity=".08" stroke-width="2" stroke-dasharray="12 12"/>
+  <circle cx="400" cy="360" r="220" fill="url(#r)"/>
+  <path d="M312 312L520 400L312 488V312Z" fill="#E8EDFF" fill-opacity=".92"/>
+  <text x="400" y="860" text-anchor="middle" fill="#E8EDFF" fill-opacity=".75" font-family="Inter, Arial, sans-serif" font-size="34" letter-spacing="4">MINGFO</text>
+  <text x="400" y="914" text-anchor="middle" fill="#E8EDFF" fill-opacity=".45" font-family="Inter, Arial, sans-serif" font-size="18">movie preview unavailable</text>
+</svg>
