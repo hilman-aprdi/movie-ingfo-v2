@@ -7,9 +7,20 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/discover", label: "Discover" },
   { href: "/search", label: "Search" },
   { href: "/watchlist", label: "Watchlist" },
+  { href: "/about", label: "About" },
 ];
+
+function SearchIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+      <circle cx="11" cy="11" r="5.8" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M15.3 15.3 20 20" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
 
 export function SiteNav() {
   const pathname = usePathname();
@@ -52,9 +63,14 @@ export function SiteNav() {
           <Link
             href={pathname === "/" ? "/discover" : "/search"}
             aria-label={pathname === "/" ? "Discover movies and TV shows" : "Search movies and TV shows"}
-            className="inline-flex h-10 items-center border border-white/10 bg-white px-4 text-sm font-semibold text-ink-950 transition duration-200 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember-300"
+            className={cn(
+              "inline-flex h-10 items-center border border-white/10 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember-300",
+              pathname === "/"
+                ? "bg-white px-4 text-sm font-semibold text-ink-950 hover:bg-slate-100"
+                : "w-10 justify-center text-white/75 hover:border-white/20 hover:bg-white/5 hover:text-white",
+            )}
           >
-            {pathname === "/" ? "Discover" : "Search"}
+            {pathname === "/" ? "Discover" : <SearchIcon />}
           </Link>
         </div>
       </div>
