@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     template: "%s | MINGFO",
   },
   applicationName: "MINGFO",
+  verification: {
+    google: "rAX9eRjgxEfjxaZJyxE_ZX9bYupHul2wmpNmcNR4jg4",
+  },
   description: "Discover trending movies, browse genres, search titles, and save movies to your personal watchlist with MINGFO.",
   robots: { index: true, follow: true },
   openGraph: {
