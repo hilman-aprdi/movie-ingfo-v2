@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { CastList } from "@/components/cast-list";
+import { BookmarkButton } from "@/components/bookmark-button";
 import { MovieRail } from "@/components/movie-rail";
 import { MovieVideos } from "@/components/movie-videos";
 import { PageShell } from "@/components/page-shell";
@@ -130,6 +131,7 @@ export default async function TvDetailPage({ params }: { params: Promise<{ id?: 
             <p className="max-w-2xl text-base leading-7 text-white/75 sm:text-lg" style={{ display: "-webkit-box", WebkitBoxOrient: "vertical", WebkitLineClamp: 3, overflow: "hidden" }}>{safeText(show.tagline, show.overview)}</p>
             <div className="flex flex-wrap items-center gap-3">
               {hasYouTubeVideo && <Link href="#videos" className="inline-flex h-12 items-center border border-white/10 bg-white px-5 text-sm font-semibold text-ink-950 transition hover:bg-slate-100">Watch trailer</Link>}
+              <BookmarkButton movie={show} className="h-12" />
             </div>
           </div>
           <div className="hidden lg:flex lg:items-end lg:justify-end"><div className="relative aspect-[2/3] w-full max-w-[22rem] overflow-hidden border border-white/10 bg-ink-950/70 shadow-[0_26px_90px_rgba(0,0,0,0.42)]"><Image src={poster} alt={`Poster for ${show.title}`} fill unoptimized sizes="(max-width: 1024px) 0px, 22rem" className="object-cover" /></div></div>

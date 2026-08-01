@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { CastList } from "@/components/cast-list";
+import { BookmarkButton } from "@/components/bookmark-button";
 import { MovieDetailsList } from "@/components/movie-details-list";
 import { MovieVideos } from "@/components/movie-videos";
 import { PageShell } from "@/components/page-shell";
@@ -207,6 +208,7 @@ export default async function MovieDetailPage({
                   Watch trailer
                 </Link>
               )}
+              <BookmarkButton movie={movie} className="h-12" />
             </div>
           </div>
 
